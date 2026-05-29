@@ -1,0 +1,447 @@
+Le Phoque Joue sur la Glace
+L'Otarie Jongle avec un Ballon
+Le Lion de Mer Rugit Fort
+Le Morse a de Longues Défenses
+La Baleine Bleue est la Plus Grande
+La Baleine à Bosse Saute Hors de l'Eau
+Le Cachalot Plonge Profondément
+L'Orque Chasse en Famille
+Le Narval a une Corne Magique
+Le Béluga Blanc Chante des Chansons
+Le Dauphin Rose Vit dans la Rivière
+Le Marsouin Nage Rapidement
+La Raie Manta Vole sous l'Eau
+La Raie Électrique Donne des Chocs
+Le Poisson-Clown Vit dans l'Anémone
+Le Poisson-Chirurgien Aide le Récif
+Le Poisson-Papillon a de Belles Couleurs
+Le Poisson-Ange Protège son Territoire
+Le Poisson-Globe se Gonfle de Peur
+Le Poisson-Coffre a une Armure
+Le Poisson-Volant Saute Hors de l'Eau
+Le Poisson-Lune est Très Grand
+L'Espadon a une Longue Épée
+Le Marlin Saute Très Haut
+Le Thon Nage Très Vite
+Le Requin-Baleine est Gentil
+Le Requin-Marteau Cherche des Amis
+Le Requin-Tigre Apprend à Partager
+Le Grand Requin Blanc Protège l'Océan
+Le Requin-Renard a une Longue Queue
+Le Requin-Citron est Jaune
+Le Requin-Tapis se Cache au Fond
+La Tortue de Mer Pond ses Œufs
+La Tortue Luth est Très Grande
+La Tortue Verte Mange des Algues
+La Tortue Caouanne Voyage Loin
+La Tortue Imbriquée Protège le Récif
+Le Crocodile Marin Nage dans l'Océan
+L'Alligator Vit dans le Marais
+Le Caïman Chasse la Nuit
+Le Gavial a un Long Museau
+L'Iguane Marin Nage dans la Mer
+Le Dragon de Komodo est Très Fort
+Le Varan Surveille son Territoire
+Le Gecko Grimpe aux Murs
+Le Lézard à Collerette Fait Peur
+Le Lézard Cornu Crache du Sang
+Le Scinque a une Queue Bleue
+L'Orvet n'a Pas de Pattes
+Le Serpent des Blés est Coloré
+Le Python Royal se Roule en Boule
+Le Boa Constricteur Serre Fort
+L'Anaconda Vit dans l'Eau
+Le Cobra Danse pour le Charmeur
+Le Serpent à Sonnette Fait du Bruit
+La Vipère se Cache dans les Rochers
+Le Serpent de Mer Nage Profondément
+Le Serpent Liane Grimpe aux Arbres
+Le Petit Hérisson Cherche des Insectes
+La Taupe Creuse des Tunnels
+La Musaraigne est Très Petite
+Le Campagnol Vit dans les Champs
+Le Lemming Migre en Groupe
+Le Gerbille Saute dans le Désert
+La Gerboise a de Longues Pattes
+Le Chinchilla a une Fourrure Douce
+Le Cobaye Siffle pour Parler
+Le Cochon d'Inde Mange des Légumes
+Le Lapin Nain est Très Mignon
+Le Lièvre Variable Change de Couleur
+Le Pika Vit dans les Montagnes
+Le Castor Construit un Barrage
+Le Ragondin Nage dans la Rivière
+Le Porc-épic a des Piquants
+Le Tatou a une Armure
+Le Paresseux Bouge Très Lentement
+Le Fourmilier Mange des Fourmis
+L'Oryctérope Cherche des Termites
+Le Pangolin se Roule en Boule
+Le Tamandua Grimpe aux Arbres
+Le Kinkajou a une Queue Préhensile
+Le Opossum Fait le Mort
+Le Koala Mange des Eucalyptus
+Le Wombat Creuse des Terriers
+Le Diable de Tasmanie Grogne Fort
+Le Quokka Sourit Toujours
+Le Wallaby Saute dans les Buissons
+Le Kangourou Géant Saute Très Loin
+Le Kangourou Arboricole Vit dans les Arbres
+Le Potoroo Cherche des Champignons
+Le Bandicoot Creuse pour Manger
+Le Numbat Mange des Termites
+Le Bilby a de Grandes Oreilles
+L'Échidné Pond des Œufs
+L'Ornithorynque a un Bec de Canard
+Le Daman Vit dans les Rochers
+L'Éléphant d'Afrique a de Grandes Oreilles
+L'Éléphant d'Asie Travaille Dur
+Le Mammouth Laineux Vit dans la Glace
+Le Mastodonte Mange des Plantes
+La Girafe Réticulée a de Belles Taches
+L'Okapi a des Rayures comme un Zèbre
+Le Zèbre de Grévy a des Rayures Fines
+Le Zèbre de Montagne Grimpe Haut
+L'Âne Sauvage Court dans le Désert
+Le Cheval de Przewalski est Rare
+Le Tapir a une Petite Trompe
+Le Rhinocéros Noir a Deux Cornes
+Le Rhinocéros Blanc Broute l'Herbe
+Le Rhinocéros de Java est Très Rare
+Le Rhinocéros de Sumatra est Petit
+L'Hippopotame Pygmée Vit dans la Forêt
+Le Sanglier d'Europe Cherche des Glands
+Le Phacochère a de Grandes Défenses
+Le Pécari Vit en Groupe
+Le Babiroussa a des Défenses Bizarres
+Le Cerf Élaphe Brame en Automne
+Le Cerf de Virginie Saute les Clôtures
+Le Renne Tire le Traîneau
+Le Caribou Migre sur de Longues Distances
+L'Élan d'Alaska est Très Grand
+L'Orignal Nage dans les Lacs
+Le Daim a de Belles Taches
+Le Chevreuil Bondit dans les Bois
+Le Chamois Grimpe les Falaises
+Le Bouquetin a de Grandes Cornes
+Le Mouflon Vit dans les Montagnes
+La Gazelle Court Très Vite
+L'Antilope Saute Gracieusement
+Le Gnou Migre en Troupeau
+L'Impala Bondit pour Échapper
+Le Springbok Saute Très Haut
+L'Oryx a de Longues Cornes Droites
+Le Koudou a des Cornes en Spirale
+L'Éland est la Plus Grande Antilope
+Le Bongo a des Rayures Blanches
+Le Nyala Vit dans les Forêts
+Le Cobe Nage dans les Marais
+Le Bubale Court dans la Savane
+Le Topi a des Cornes Courbes
+Le Sassabi est Très Rapide
+Le Bison d'Amérique Vit dans les Plaines
+Le Bison d'Europe Protège la Forêt
+Le Buffle d'Afrique est Très Fort
+Le Buffle d'Asie Travaille dans les Rizières
+Le Yak Vit dans l'Himalaya
+Le Bœuf Musqué Résiste au Froid
+L'Aurochs Était Très Grand
+Le Zébu a une Bosse
+La Vache Highland a de Longs Poils
+Le Taureau Espagnol est Courageux
+Le Mouton Mérinos a une Belle Laine
+Le Mouton Bighorn a de Grandes Cornes
+La Chèvre Angora Donne du Mohair
+La Chèvre Naine est Très Mignonne
+Le Lama Crache Quand il est Fâché
+L'Alpaga a une Laine Douce
+La Vigogne Vit dans les Andes
+Le Guanaco Court dans les Montagnes
+Le Chameau a Deux Bosses
+Le Dromadaire a Une Bosse
+Le Dodo Était un Oiseau Unique
+Le Moa Était Très Grand
+L'Autruche Court Très Vite
+L'Émeu Vit en Australie
+Le Nandou Court dans les Pampas
+Le Casoar a un Casque sur la Tête
+Le Kiwi Cherche des Vers la Nuit
+Le Manchot Empereur Brave le Froid
+Le Manchot Royal a un Beau Plumage
+Le Manchot Adélie Construit un Nid
+Le Manchot à Jugulaire a une Marque Noire
+Le Manchot de Magellan Nage Vite
+Le Manchot des Galápagos Vit au Chaud
+Le Guillemot Plonge pour Pêcher
+Le Macareux a un Bec Coloré
+Le Pingouin Torda Vole et Nage
+L'Albatros Voyageur Plane sur l'Océan
+Le Pétrel Suit les Bateaux
+Le Fulmar Vole au-dessus des Vagues
+La Sterne Arctique Migre Très Loin
+La Mouette Rieuse Crie Fort
+Le Goéland Argenté Cherche de la Nourriture
+Le Fou de Bassan Plonge dans l'Eau
+Le Cormoran Pêche sous l'Eau
+Le Pélican Brun Attrape des Poissons
+La Frégate Vole les Poissons
+Le Grèbe Huppé Danse sur l'Eau
+Le Plongeon Huard Chante la Nuit
+La Poule d'Eau Nage dans l'Étang
+La Foulque Plonge pour Manger
+Le Râle d'Eau se Cache dans les Roseaux
+La Grue Cendrée Danse en Couple
+La Grue du Japon est Très Élégante
+Le Héron Cendré Attend Patiemment
+L'Aigrette Garzette a de Belles Plumes
+Le Butor Étoilé se Camoufle
+La Spatule Blanche a un Bec Plat
+L'Ibis Sacré Était Vénéré
+Le Tantale Ibis Pêche en Groupe
+Le Marabout a un Grand Bec
+La Cigogne Noire Vit dans les Forêts
+Le Flamant des Caraïbes est Rose Vif
+Le Flamant Nain est Petit
+Le Cygne Tuberculé est Majestueux
+Le Cygne Noir Vit en Australie
+Le Cygne Siffleur Chante Doucement
+L'Oie Cendrée Migre en V
+L'Oie des Neiges est Toute Blanche
+La Bernache du Canada Voyage Loin
+Le Canard Colvert a la Tête Verte
+Le Canard Mandarin est Très Coloré
+La Sarcelle d'Hiver est Petite
+Le Fuligule Morillon Plonge Profond
+Le Harle Bièvre Pêche des Poissons
+L'Eider à Duvet a un Duvet Chaud
+Le Tadorne de Belon a un Bec Rouge
+Le Vautour Fauve Nettoie la Nature
+Le Condor des Andes Plane Haut
+L'Urubu à Tête Rouge Cherche des Charognes
+Le Gypaète Barbu Mange des Os
+Le Percnoptère d'Égypte Casse des Œufs
+Le Milan Royal a une Queue Fourchue
+Le Milan Noir Survole les Rivières
+La Buse Variable Chasse les Rongeurs
+L'Autour des Palombes Vole entre les Arbres
+L'Épervier d'Europe Chasse les Petits Oiseaux
+Le Busard des Roseaux Plane Bas
+Le Circaète Jean-le-Blanc Mange des Serpents
+La Bondrée Apivore Mange des Guêpes
+Le Pygargue à Tête Blanche est Majestueux
+L'Aigle Royal Règne sur les Montagnes
+L'Aigle de Bonelli Chasse les Lapins
+L'Aigle Botté est Petit mais Fort
+L'Aigle Pêcheur Attrape des Poissons
+Le Balbuzard Pêcheur Plonge dans l'Eau
+Le Faucon Pèlerin est le Plus Rapide
+Le Faucon Crécerelle Fait du Surplace
+Le Faucon Hobereau Chasse les Libellules
+L'Émouchet Chasse dans les Champs
+Le Crécerelle d'Amérique est Coloré
+Le Hibou Grand-duc a des Aigrettes
+La Chouette Effraie Chasse la Nuit
+La Chouette Hulotte Hulule dans les Bois
+La Chouette Chevêche est Petite
+La Chouette de Tengmalm Vit dans les Forêts
+Le Harfang des Neiges est Blanc
+Le Petit-duc Scops Chante en Été
+La Chouette Lapone a un Grand Disque Facial
+Le Hibou Moyen-duc a de Longues Aigrettes
+Le Hibou des Marais Chasse le Jour
+L'Engoulevent d'Europe Chante la Nuit
+Le Martinet Noir Vole Tout le Temps
+Le Martinet à Ventre Blanc Niche dans les Falaises
+L'Hirondelle Rustique Construit en Boue
+L'Hirondelle de Fenêtre Niche sous les Toits
+L'Hirondelle de Rivage Creuse des Tunnels
+L'Hirondelle Rousseline Vit dans le Sud
+Le Pipit Farlouse Chante en Vol
+La Bergeronnette Grise Hoche la Queue
+La Bergeronnette des Ruisseaux Vit près de l'Eau
+Le Traquet Motteux Migre Loin
+Le Rougequeue Noir a une Queue Rouge
+Le Rossignol Philomèle Chante Magnifiquement
+Le Merle Noir Siffle le Matin
+La Grive Musicienne Répète ses Phrases
+La Grive Draine Mange des Baies
+Le Rouge-gorge Familier est Curieux
+Le Troglodyte Mignon est Très Petit
+L'Accenteur Mouchet Cherche des Graines
+La Fauvette à Tête Noire Chante Fort
+La Fauvette des Jardins Vit dans les Buissons
+Le Pouillot Véloce Dit son Nom
+Le Roitelet Huppé est le Plus Petit
+La Mésange Charbonnière a une Cravate Noire
+La Mésange Bleue est Très Colorée
+La Mésange Nonnette a une Calotte Noire
+La Mésange Huppée a une Crête
+La Mésange Noire Vit dans les Conifères
+La Sittelle Torchepot Descend la Tête en Bas
+Le Grimpereau des Jardins Grimpe aux Troncs
+Le Pic Vert Cherche des Fourmis
+Le Pic Épeiche Tambourine sur les Arbres
+Le Pic Noir est le Plus Grand
+Le Pic Épeichette est Très Petit
+Le Torcol Fourmilier Tord son Cou
+Le Geai des Chênes Cache des Glands
+La Pie Bavarde Collectionne des Objets
+Le Choucas des Tours Vit en Ville
+La Corneille Noire est Intelligente
+Le Grand Corbeau Croasse Fort
+Le Casse-noix Moucheté Casse des Noisettes
+L'Étourneau Sansonnet Imite les Sons
+Le Loriot d'Europe Siffle Joliment
+Le Jaseur Boréal Mange des Baies
+La Huppe Fasciée a une Crête
+Le Martin-pêcheur d'Europe Plonge pour Pêcher
+Le Guêpier d'Europe Mange des Guêpes
+Le Rollier d'Europe est Très Coloré
+La Sitelle Kabyle Vit en Algérie
+Le Tichodrome Échelette Grimpe les Falaises
+Le Moineau Domestique Vit près des Maisons
+Le Serin Cini Chante Gaiement
+Le Verdier d'Europe a un Bec Fort
+Le Chardonneret Élégant a des Couleurs Vives
+Le Tarin des Aulnes Mange des Graines
+Le Sizerin Flammé Vit dans le Nord
+Le Bouvreuil Pivoine a une Poitrine Rouge
+Le Grosbec Casse-noyaux Casse des Noyaux
+Le Pinson des Arbres Chante au Printemps
+Le Pinson du Nord Migre en Hiver
+La Linotte Mélodieuse Chante Doucement
+Le Bruant Jaune a la Tête Jaune
+Le Bruant Zizi Dit son Nom
+Le Bruant des Roseaux Vit dans les Marais
+Le Bruant Ortolan Migre Loin
+Le Bruant Proyer Chante sur un Poteau
+Le Moineau Friquet Vit à la Campagne
+Le Moineau Soulcie Vit dans les Montagnes
+L'Alouette des Champs Chante en Vol
+L'Alouette Lulu a une Petite Huppe
+Le Cochevis Huppé a une Grande Huppe
+La Calandrelle Vit dans les Steppes
+Le Pipit des Arbres Chante en Parachute
+Le Pipit Spioncelle Vit en Montagne
+La Bergeronnette Printanière est Jaune
+Le Jaseur d'Amérique Mange des Baies
+Le Merle à Plastron Vit en Montagne
+La Grive Litorne Migre en Groupe
+La Grive Mauvis a un Sourcil Blanc
+Le Monticole de Roche Chante sur les Rochers
+Le Monticole Bleu est Très Coloré
+Le Tarier des Prés Vit dans les Prairies
+Le Tarier Pâtre Perche sur les Buissons
+Le Traquet Rieur Vit dans le Sud
+Le Traquet Oreillard a des Marques Noires
+La Gorgebleue à Miroir a une Gorge Bleue
+Le Rougequeue à Front Blanc Vit en Montagne
+Le Rossignol Progné Chante la Nuit
+La Bouscarle de Cetti Chante Fort
+La Locustelle Tachetée Chante comme un Grillon
+La Locustelle Luscinioïde Vit dans les Roseaux
+La Rousserolle Effarvatte Construit dans les Roseaux
+La Rousserolle Turdoïde est Grande
+La Rousserolle Verderolle Chante Doucement
+L'Hypolaïs Polyglotte Imite les Autres
+L'Hypolaïs Ictérine est Jaune
+La Fauvette Grisette Vit dans les Buissons
+La Fauvette Babillarde Babille Sans Arrêt
+La Fauvette Orphée Chante Magnifiquement
+La Fauvette Passerinette est Petite
+La Fauvette Pitchou Vit dans les Garrigues
+Le Pouillot Fitis Chante Joliment
+Le Pouillot Siffleur Siffle Fort
+Le Pouillot de Bonelli Vit dans les Pins
+Le Roitelet Triple-bandeau a Trois Bandes
+Le Gobemouche Gris Attrape des Mouches
+Le Gobemouche Noir a un Beau Plumage
+Le Gobemouche à Collier Vit dans les Forêts
+La Mésange à Longue Queue a une Longue Queue
+La Mésange Boréale Vit dans le Nord
+La Mésange Lugubre Vit dans les Montagnes
+La Mésange Azurée est Bleue
+La Rémiz Penduline Construit un Nid Suspendu
+La Panure à Moustaches a des Moustaches
+Le Tichodrome Échelette Grimpe les Parois
+La Sittelle Corse Vit en Corse
+Le Grimpereau des Bois Grimpe en Spirale
+Le Loriot Doré est Jaune d'Or
+La Pie-grièche Écorcheur Empale ses Proies
+La Pie-grièche Grise Chasse les Insectes
+La Pie-grièche à Tête Rousse Vit dans le Sud
+La Pie-grièche Méridionale Défend son Territoire
+Le Geai Bleu Vit en Amérique
+Le Cassenoix Moucheté Cache des Graines
+Le Chocard à Bec Jaune Vit en Montagne
+Le Crave à Bec Rouge a un Bec Courbe
+L'Étourneau Roselin est Rose et Noir
+Le Moineau Espagnol Vit en Espagne
+Le Tisserin Gendarme Tisse un Nid
+Le Veuve Dominicaine a une Longue Queue
+Le Bengali Rouge est Très Petit
+Le Diamant Mandarin a des Joues Oranges
+Le Canari Jaune Chante Mélodieusement
+Le Padda de Java a un Gros Bec
+Le Capucin à Tête Blanche est Élégant
+La Perruche Ondulée Parle et Joue
+La Perruche Calopsitte a une Huppe Jaune
+La Perruche à Collier Vit en Liberté
+La Perruche Alexandre est Grande
+L'Inséparable Rosegorge est Affectueux
+L'Inséparable de Fischer Vit en Couple
+Le Cacatoès à Huppe Jaune Danse
+Le Cacatoès Rosalbin est Rose
+L'Ara Bleu et Jaune est Magnifique
+L'Ara Chloroptère a des Ailes Vertes
+L'Ara Hyacinthe est Bleu Cobalt
+L'Ara Militaire est Vert
+Le Conure Soleil est Orange Vif
+Le Conure Veuve a une Tête Noire
+L'Amazone à Front Bleu Parle Bien
+L'Amazone à Joues Vertes est Bavarde
+Le Gris du Gabon est Très Intelligent
+Le Youyou du Sénégal est Petit et Vert
+La Perruche Splendide est Colorée
+Le Loriquet Arc-en-ciel Boit du Nectar
+Le Cacatoès des Philippines est Rare
+Le Kakapo Ne Vole Pas
+Le Kéa Joue dans la Neige
+Le Nestor Kéa est Curieux
+La Perruche de Bourke est Rose
+La Perruche Turquoisine est Bleue
+Le Moineau du Japon est Domestique
+Le Diamant de Gould a Cinq Couleurs
+Le Bec d'Argent a un Bec Gris
+Le Capucin Bec de Plomb est Noir et Blanc
+Le Combassou du Sénégal est Tout Noir
+L'Amarante du Sénégal a la Tête Rouge
+Le Cordon Bleu a des Joues Bleues
+L'Astrild Ondulé a des Rayures
+Le Bengali Zébré a des Rayures Fines
+Le Diamant à Bavette a une Bavette Noire
+Le Diamant à Queue Rousse a une Queue Rouge
+Le Diamant de Kittlitz est Rare
+La Caille de Chine est Très Petite
+La Caille du Japon Pond Beaucoup d'Œufs
+Le Colin de Virginie Siffle Fort
+Le Colin de Californie a une Huppe
+La Perdrix Rouge Vit dans les Collines
+La Perdrix Grise Vit dans les Champs
+La Perdrix Bartavelle Vit en Montagne
+La Perdrix Choukar Grimpe les Pentes
+Le Tétras Lyre Parade au Printemps
+Le Grand Tétras Vit dans les Forêts
+La Gélinotte des Bois se Camoufle
+Le Lagopède Alpin Change de Couleur
+Le Lagopède des Saules Vit dans la Toundra
+La Poule Faisane se Cache dans les Herbes
+Le Faisan de Colchide a des Couleurs Vives
+Le Faisan Doré est Magnifique
+Le Faisan Vénéré est Élégant
+Le Faisan Lady Amherst a une Collerette
+Le Paon Bleu Fait la Roue
+Le Paon Blanc est Tout Blanc
+La Pintade Domestique a des Points Blancs
+La Dinde Sauvage Vit en Amérique
+Le Petit Caneton Apprend à Nager avec sa Famille
