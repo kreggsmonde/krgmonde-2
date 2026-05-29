@@ -112,8 +112,17 @@ def main():
     else:
         title = "Histoire pour Enfants"
     
-    # NO description - only #Shorts hashtag for YouTube Shorts
-    description = "#Shorts"
+    # Include story text in description
+    story_text = ""
+    story_file = Path('output/story.txt')
+    if story_file.exists():
+        story_text = story_file.read_text(encoding='utf-8')
+    
+    description = f"""{title}
+
+{story_text}
+
+#HistoiresPourEnfants #Contes #Français #PourEnfants #Shorts"""
     
     tags = [
         'Histoires pour Enfants', 'Enfants', 'Animaux', 'Français', 'Histoires',

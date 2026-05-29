@@ -40,37 +40,30 @@ def main():
         print("[upload] ❌ No video found at output/final_video.mp4")
         return
     
-    # Read story for metadata
-    story_file = Path('output/story.txt')
-    if story_file.exists():
-        story = story_file.read_text(encoding='utf-8')
-        # Use first sentence as title
-        title_parts = story.split('.')
-        title = title_parts[0][:100] if title_parts else "Daily Inspiration"
-    else:
-        title = f"Daily Inspiration - {datetime.date.today()}"
-    
-    # Description (keeping the original French/English mix usually found in this repo context, 
-    # but the user said "get inspiration from this folder", yet "Don't mess up the titles of this description")
-    # I'll try to keep a generic description logic but allow it to be rich.
-    
-    # Reading topics.txt to see if we can get a topic name
-    topic = "General Interest"
+    # Read topic from used_topics.txt (unique each run)
+    title = "Histoire pour Enfants"
     if os.path.exists("used_topics.txt"):
         with open("used_topics.txt", "r", encoding="utf-8") as f:
-            lines = f.readlines()
+            lines = [line.strip() for line in f if line.strip()]
             if lines:
-                topic = lines[-1].strip()
-
+                title = lines[-1]
+    
+    # Read story text for description (unique each run)
+    story_text = ""
+    story_file = Path('output/story.txt')
+    if story_file.exists():
+        story_text = story_file.read_text(encoding='utf-8')
+    
     description = f"""{title}
 
-Interesting facts and stories!
+{story_text}
 
-#Shorts #Viral #Trending #Facts #AI"""
+#HistoiresPourEnfants #Contes #Français #PourEnfants #Shorts #Histoire #Éducation #Apprentissage"""
 
     
     tags = [
-        'Shorts', 'Viral', 'Trending', 'Facts', 'AI', 'Inspiration'
+        'Histoires pour Enfants', 'Contes', 'Français', 'Pour Enfants',
+        'Shorts', 'Animation', 'Éducation', 'Apprentissage'
     ]
     
     results = {}

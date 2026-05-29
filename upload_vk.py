@@ -60,7 +60,7 @@ def upload_to_vk(video_path, description="", title=""):
         upload = vk_api.VkUpload(vk_session)
         
         # Prepare message
-        message = description if description else "💭 Daily dating advice for you!\n\n#DatingAdvice #RelationshipTips #GirlsDatingRules"
+        message = description if description else "✨ Une nouvelle histoire pour enfants!\n\n#HistoiresPourEnfants #Contes #Français"
         
         # Ensure message is not empty (VK requirement)
         if not message.strip():
@@ -74,7 +74,7 @@ def upload_to_vk(video_path, description="", title=""):
         try:
             video = upload.video(
                 video_file=str(video_path),
-                name=title or 'Startups & Business',
+                name=title or 'Histoires pour Enfants',
                 description=description[:220] if description else '',
                 group_id=group_id_int, 
                 wallpost=0
@@ -151,8 +151,8 @@ def main():
         sys.exit(1)
     
     video_path = sys.argv[1]
-    description = sys.argv[2] if len(sys.argv) > 2 else "Daily dating advice! 💭"
-    title = sys.argv[3] if len(sys.argv) > 3 else "Dating Advice"
+    description = sys.argv[2] if len(sys.argv) > 2 else "Une nouvelle histoire pour enfants! ✨"
+    title = sys.argv[3] if len(sys.argv) > 3 else "Histoire pour Enfants"
     
     try:
         result = upload_to_vk(video_path, description, title)
