@@ -288,27 +288,9 @@ def generate_image(scene: str, idx: int) -> Path:
     # Créer une graine unique pour chaque image basée sur le contenu de la scène + index
     seed = hash(scene + str(idx)) % 1000000
     
-    # Prompt amélioré avec des instructions anti-déformation complètes
-    prompt = (
-        f"Professional 3D Pixar Disney animation style, ultra high quality 8K render, {scene}, "
-        f"perfect symmetrical faces, flawless facial features, anatomically correct proportions, "
-        f"cute adorable animal characters with correct anatomy, "
-        f"professional character design, crystal clear details, "
-        f"vibrant colorful children's book illustration, cinematic lighting, "
-        f"magical forest atmosphere, child-friendly, happy joyful expression, "
-        f"masterpiece quality, sharp focus, beautiful composition, "
-        f"NEGATIVE PROMPT: deformed, disfigured, ugly, bad anatomy, "
-        f"extra limbs, missing limbs, floating limbs, disconnected limbs, "
-        f"mutated hands, poorly drawn hands, malformed hands, "
-        f"poorly drawn face, mutation, deformed face, asymmetric face, "
-        f"blurry, bad proportions, extra fingers, fused fingers, "
-        f"too many fingers, cloned face, duplicate features, "
-        f"disfigured, gross proportions, malformed limbs, "
-        f"extra arms, extra legs, missing arms, missing legs, "
-        f"deformed eyes, cross-eyed, misaligned eyes, extra eyes, "
-        f"deformed mouth, extra mouth, bad teeth, "
-        f"low quality, worst quality, low resolution, distorted"
-    )
+    # Short negative prompt to keep URL length under limits
+    neg = "deformed, disfigured, ugly, bad anatomy, extra limbs, bad hands, malformed face, blurry, low quality"
+    prompt = f"Professional 3D Pixar Disney animation style, 8K, {scene}, cute adorable, vibrant colors, children's book illustration, cinematic lighting, masterpiece. NEGATIVE: {neg}"
     safe_prompt = quote(prompt)
     
     # Inclure la graine pour garantir une image unique
