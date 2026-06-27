@@ -230,10 +230,11 @@ def generate_visual_prompts(story: str) -> list:
     
     prompt = (
         f"Read this {lang_name} story: '{story}'\n"
-        f"Generate exactly {NUM_IMAGES} detailed, visual image descriptions in ENGLISH based on this story. "
+        f"Generate exactly {NUM_IMAGES} concise visual descriptions in ENGLISH based on this story. "
+        f"Keep each description to ONE short sentence (max 20 words). "
         f"Describe the animals, expressions, and environment clearly. "
         f"Make them cute and suitable for a 3D Pixar-style animation. "
-        f"Output ONLY the {NUM_IMAGES} descriptions, one per line. No numbering."
+        f"Output ONLY the {NUM_IMAGES} short descriptions, one per line. No numbering."
     )
 
     # Utiliser l'API v1 compatible OpenAI
@@ -288,12 +289,13 @@ def generate_image(scene: str, idx: int) -> Path:
     # Créer une graine unique pour chaque image basée sur le contenu de la scène + index
     seed = hash(scene + str(idx)) % 1000000
     
-    # Short negative prompt to keep URL length under limits
+    # Keep prompt short to avoid URL length limits
+    scene_short = scene[:150] if len(scene) > 150 else scene
     neg = "deformed, disfigured, ugly, bad anatomy, extra limbs, bad hands, malformed face, blurry, low quality"
-    prompt = f"Professional 3D Pixar Disney animation style, 8K, {scene}, cute adorable, vibrant colors, children's book illustration, cinematic lighting, masterpiece. NEGATIVE: {neg}"
+    prompt = f"3D Pixar style, 8K, {scene_short}, cute, vibrant colors, children's book illustration, cinematic lighting. NEGATIVE: {neg}"
     safe_prompt = quote(prompt)
     
-    # Inclure la graine pour garantir une image unique
+    # Use prompt as query parameter when too long for path
     url = (
         f"https://gen.pollinations.ai/image/{safe_prompt}"
         f"?width={IMAGE_WIDTH}&height={IMAGE_HEIGHT}&model={IMAGE_MODEL}&seed={seed}&nologo=true"
