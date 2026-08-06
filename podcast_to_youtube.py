@@ -74,7 +74,7 @@ def process_latest_podcast():
     # 1. Create Video
     if create_podcast_video(latest_audio, latest_image, output_video):
         # 2. Extract Title and Description
-        description = "Une nouvelle histoire magique en français."
+        description = "Un nouvel episode de psychologie et developpement personnel en francais."
         if story_path.exists():
             description = story_path.read_text(encoding='utf-8')
         

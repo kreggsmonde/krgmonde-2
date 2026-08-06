@@ -30,19 +30,19 @@ def generate_podcast_story(topic: str):
         "Content-Type": "application/json"
     }
     
-    # Prompt for a longer, more detailed story
+    # Prompt for a longer, more detailed content
     prompt = (
-        f"Write a cozy, educational, and engaging children's story in French about: {topic}. "
-        f"The story should be detailed, with vivid descriptions and a calm pace. "
+        f"Write an engaging podcast episode in French about psychology and self-improvement: {topic}. "
+        f"The content should be detailed, with practical advice and a calm pace. "
         f"Target length: 500-800 words. "
-        f"Structure: An introduction welcoming the listeners, the main story with 3 distinct parts, and a gentle conclusion with a lesson. "
-        f"Output ONLY the story text in French."
+        f"Structure: An introduction welcoming the listeners, the main content with 3 distinct parts, and a gentle conclusion with a key takeaway. "
+        f"Output ONLY the content text in French."
     )
     
     payload = {
         "model": "openai",
         "messages": [
-            {"role": "system", "content": "You are a world-class French children's podcast narrator and author."},
+            {"role": "system", "content": "You are a psychology and self-improvement expert creating podcast content in French."},
             {"role": "user", "content": prompt}
         ]
     }
@@ -50,17 +50,17 @@ def generate_podcast_story(topic: str):
     try:
         r = requests.post(url, headers=headers, json=payload, timeout=120)
         r.raise_for_status()
-        story = r.json()['choices'][0]['message']['content'].strip()
+        content = r.json()['choices'][0]['message']['content'].strip()
         
-        # Save story text
+        # Save content text
         timestamp = int(time.time())
-        story_file = OUTPUT_DIR / f"story_{timestamp}.txt"
-        story_file.write_text(story, encoding='utf-8')
+        content_file = OUTPUT_DIR / f"episode_{timestamp}.txt"
+        content_file.write_text(content, encoding='utf-8')
         
-        print(f"✅ Story generated ({len(story.split())} words)")
-        return story, story_file
+        print(f"✅ Episode content generated ({len(content.split())} words)")
+        return content, content_file
     except Exception as e:
-        print(f"❌ Story generation failed: {e}")
+        print(f"❌ Content generation failed: {e}")
         return None, None
 
 def generate_cover_image(topic: str, filename_prefix: str):
@@ -68,7 +68,7 @@ def generate_cover_image(topic: str, filename_prefix: str):
     print(f"🎨 Generating cover image for: {topic}")
     
     # Prompt for Flux
-    prompt = f"Podcast cover art, high-quality professional design, {topic}, illustrative style, child-friendly, vibrant colors, cozy atmosphere, centered composition, 1024x1024"
+    prompt = f"Podcast cover art, high-quality professional design, {topic}, psychology, self-improvement, calm atmosphere, centered composition, 1024x1024"
     safe_prompt = requests.utils.quote(prompt)
     
     url = f"https://gen.pollinations.ai/image/{safe_prompt}?width=1024&height=1024&model=flux&nologo=true"
@@ -106,13 +106,13 @@ def choose_podcast_topic():
     """Picks the first topic from the topics file and removes it."""
     topics_file = Path(__file__).parent / "podcast_topics.txt"
     if not topics_file.exists():
-        return "Une histoire magique pour les enfants"
+        return "La puissance de la gratitude au quotidien"
 
     with open(topics_file, "r", encoding="utf-8") as f:
         topics = [line.strip() for line in f if line.strip()]
     
     if not topics:
-        return "Une nouvelle aventure française"
+        return "Comment gerer le stress efficacement"
     
     selected = topics[0]
     

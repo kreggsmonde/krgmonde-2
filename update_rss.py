@@ -19,7 +19,7 @@ def create_rss_shell():
     
     # Podcast Metadata
     ET.SubElement(channel, "title").text = "kreggsmonde"
-    ET.SubElement(channel, "description").text = "Des histoires magiques pour apprendre le français et s'endormir paisiblement."
+    ET.SubElement(channel, "description").text = "Psychologie et developpement personnel en francais."
     ET.SubElement(channel, "link").text = BASE_URL
     ET.SubElement(channel, "language").text = "fr-fr"
     
@@ -33,7 +33,7 @@ def create_rss_shell():
     ET.SubElement(itunes_owner, "{http://www.itunes.com/dtds/podcast-1.0.dtd}email").text = "kreggsmonde@gmail.com"
     
     itunes_category = ET.SubElement(channel, "{http://www.itunes.com/dtds/podcast-1.0.dtd}category")
-    itunes_category.set("text", "Kids & Family")
+    itunes_category.set("text", "Self-Help")
     
     itunes_image = ET.SubElement(channel, "{http://www.itunes.com/dtds/podcast-1.0.dtd}image")
     itunes_image.set("href", f"{BASE_URL}/logo.jpg")
@@ -69,7 +69,7 @@ def update_feed():
         story_file = audio.with_suffix(".txt").name.replace("podcast_episode_", "story_")
         story_path = recordings_path / story_file
         
-        description = "Une nouvelle histoire passionnante."
+        description = "Un nouvel episode de psychologie et developpement personnel."
         if story_path.exists():
             description = story_path.read_text(encoding='utf-8')[:300] + "..."
             
