@@ -74,7 +74,7 @@ def upload_to_vk(video_path, description="", title=""):
         try:
             video = upload.video(
                 video_file=str(video_path),
-                name=title or 'Histoires pour Enfants',
+                name=title or 'Psychologie & Bien-etre',
                 description=description[:220] if description else '',
                 group_id=group_id_int, 
                 wallpost=0
