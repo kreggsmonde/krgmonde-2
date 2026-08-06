@@ -108,15 +108,15 @@ def main():
     if topic:
         tweet_text = topic
     else:
-        tweet_text = "Children's Story 🎬✨"
+        tweet_text = "Psychologie & Bien-etre"
     
     # Add relevant hashtags
     hashtags = [
-        'KidsStories',
-        'ChildrensStories',
-        'Animation',
-        'Shorts',
-        'Kids'
+        'Psychologie',
+        'BienEtre',
+        'DeveloppementPersonnel',
+        'Motivation',
+        'Shorts'
     ]
     
     # Upload to X

@@ -38,7 +38,7 @@ def upload_podcast_to_youtube(video_path: Path, title: str, description: str):
     """Uploads the generated video to YouTube."""
     print(f"📺 Uploading podcast to YouTube: {title}")
     
-    tags = ["French", "Podcast", "Children Stories", "Learn French", "Storytime"]
+    tags = ["French", "Podcast", "Psychology", "Self-Improvement", "Bien-etre", "Developpement Personnel"]
     
     try:
         result = upload_to_youtube(video_path, title, description, tags)

@@ -110,24 +110,15 @@ def main():
     if topic:
         title = topic
     else:
-        title = "Histoire pour Enfants"
+        title = "Psychologie & Bien-etre"
     
-    # Include story text in description
-    story_text = ""
-    story_file = Path('output/story.txt')
-    if story_file.exists():
-        story_text = story_file.read_text(encoding='utf-8')
-    
-    description = f"""{title}
-
-{story_text}
-
-#HistoiresPourEnfants #Contes #Français #PourEnfants #Shorts"""
+    # NO description - only #Shorts hashtag for YouTube Shorts
+    description = "#Shorts"
     
     tags = [
-        'Histoires pour Enfants', 'Enfants', 'Animaux', 'Français', 'Histoires',
-        'Shorts', 'Animation', 'Contes pour Enfants', 'Apprentissage', 'Éducation',
-        'France', 'Français', 'Histoires Animées'
+        'Psychologie', 'Bien-etre', 'Developpement Personnel', 'Francais', 'Motivation',
+        'Shorts', 'Intelligence Emotionnelle', 'Confiance en Soi', 'Productivite',
+        'France', 'Francais', 'Psychologie Positive'
     ]
     
     # Upload
