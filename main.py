@@ -98,16 +98,17 @@ def choose_topic_for_today():
 
     return selected_topic
 
-def generate_story_with_pollinations(topic: str) -> str:
-    """Generate a short psychology/self-improvement story in French."""
+def generate_psychology_content(topic: str) -> str:
+    """Generate a short psychology/self-improvement content in French - NOT a story."""
     lang_name = LANGUAGE_CONFIG["name"]
 
     full_prompt = (
-        f"Write a short inspiring story in {lang_name} about psychology and self-improvement, "
+        f"Write a short inspiring content in {lang_name} about psychology and self-improvement, "
         f"strictly on the topic: {topic}. "
-        f"Do not change the topic. The story must be exactly about the title. "
+        f"Do NOT write a story. Do NOT use characters or animals. "
+        f"Write direct advice, tips, or insights about the topic. "
         f"Include practical advice or a life lesson. "
-        f"Length: 80-120 words. Simple language. Only the story content, no title."
+        f"Length: 80-120 words. Simple language. Only the content, no title."
     )
 
     url = "https://gen.pollinations.ai/v1/chat/completions"
@@ -118,12 +119,12 @@ def generate_story_with_pollinations(topic: str) -> str:
     payload = {
         "model": "openai",
         "messages": [
-            {"role": "system", "content": "You are a psychology and self-improvement author writing in French."},
+            {"role": "system", "content": "You are a psychology and self-improvement expert writing in French. Write direct advice, not stories."},
             {"role": "user", "content": full_prompt}
         ]
     }
 
-    print(f"[story] Generating story ({lang_name}): {topic}")
+    print(f"[content] Generating psychology content ({lang_name}): {topic}")
 
     max_retries = 3
     for attempt in range(max_retries):
@@ -135,12 +136,12 @@ def generate_story_with_pollinations(topic: str) -> str:
             words = text.split()
 
             if len(words) < 50:
-                print(f"[story] Story too short ({len(words)} words), retry {attempt + 1}/{max_retries}...")
+                print(f"[content] Content too short ({len(words)} words), retry {attempt + 1}/{max_retries}...")
                 if attempt < max_retries - 1:
                     time.sleep(2)
                     continue
                 else:
-                    raise ValueError(f"Story too short after {max_retries} retries: {len(words)} words")
+                    raise ValueError(f"Content too short after {max_retries} retries: {len(words)} words")
 
             if len(words) > STORY_MAX_WORDS:
                 text = " ".join(words[:STORY_MAX_WORDS])
@@ -149,11 +150,11 @@ def generate_story_with_pollinations(topic: str) -> str:
             with open(STORY_FILE, "w", encoding="utf-8") as f:
                 f.write(text)
 
-            print(f"[story] Story generated ({len(words)} words)")
+            print(f"[content] Psychology content generated ({len(words)} words)")
             return text
 
         except Exception as e:
-            print(f"[story] Error attempt {attempt + 1}/{max_retries}: {e}")
+            print(f"[content] Error attempt {attempt + 1}/{max_retries}: {e}")
             if attempt < max_retries - 1:
                 time.sleep(3)
             else:
@@ -164,20 +165,20 @@ def generate_story_with_pollinations(topic: str) -> str:
                     f"Le secret est la persistance et la confiance en soi. "
                     f"Croyez en vous, et le reste suivra."
                 )
-                print(f"[story] Using fallback story")
+                print(f"[content] Using fallback content")
                 with open(STORY_FILE, "w", encoding="utf-8") as f:
                     f.write(fallback)
                 return fallback
 
-def generate_visual_prompts(story: str) -> list:
-    """Generate 8 visual descriptions in English from the story."""
+def generate_visual_prompts(content: str) -> list:
+    """Generate 8 visual descriptions in English from the psychology content."""
     print(f"[scenes] Generating visual prompts in English...")
 
     prompt = (
-        f"Read this French story: '{story}'\n"
-        f"Generate exactly {NUM_IMAGES} detailed, visual image descriptions in ENGLISH based on this story. "
-        f"Describe stickman-style characters, expressions, and environments clearly. "
-        f"Make them suitable for a simple animation. "
+        f"Read this French psychology content: '{content}'\n"
+        f"Generate exactly {NUM_IMAGES} detailed, visual image descriptions in ENGLISH based on this content. "
+        f"Describe stickman-style characters in relatable daily life situations (not animals). "
+        f"Show emotions, actions, and environments that match the psychology topic. "
         f"Output ONLY the {NUM_IMAGES} descriptions, one per line. No numbering."
     )
 
@@ -189,7 +190,7 @@ def generate_visual_prompts(story: str) -> list:
     payload = {
         "model": "openai",
         "messages": [
-            {"role": "system", "content": "You are a creative director for animation."},
+            {"role": "system", "content": "You are a creative director for animation. Show relatable human situations, not animals."},
             {"role": "user", "content": prompt}
         ]
     }
@@ -549,13 +550,13 @@ def main():
     print(f"=== Topic: {topic}")
     print("=" * 60)
 
-    story = generate_story_with_pollinations(topic)
+    content = generate_psychology_content(topic)
 
-    scenes = generate_visual_prompts(story)
+    scenes = generate_visual_prompts(content)
 
     images = generate_images(scenes)
 
-    generate_tts(story)
+    generate_tts(content)
 
     audio_duration = get_audio_duration(NARRATION_FILE)
     print(f"[validation] Audio duration: {audio_duration:.2f} seconds")

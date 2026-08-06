@@ -7,7 +7,7 @@ load_dotenv()
 POLLINATIONS_API_KEY = os.getenv("POLLINATIONS_API_KEY")
 
 def generate_french_psychology_topics(num_topics=100):
-    """Generate psychology and self-improvement topics in French."""
+    """Generate psychology and self-improvement topics in French using AI."""
 
     url = "https://gen.pollinations.ai/v1/chat/completions"
 
@@ -17,22 +17,25 @@ def generate_french_psychology_topics(num_topics=100):
     }
 
     system = (
-        "Vous etes un auteur de psychologie et de developpement personnel. "
-        "Generez de courts titres sur la psychologie et le developpement personnel en francais. "
-        "Chaque titre doit etre inspirant et pertinent. "
-        "Utilisez un langage simple et accessible. "
-        "Generez UNIQUEMENT les titres, chacun sur une nouvelle ligne, sans numerotation."
+        "Tu es un expert en psychologie et developpement personnel. "
+        "Genere des courts titres sur la psychologie, les emotions, les relations humaines, "
+        "la productivite, le bien-etre mental, la confiance en soi, et la croissance personnelle. "
+        "NE GENERE PAS d'histoires pour enfants. NE GENERE PAS d'animaux. "
+        "Chaque titre doit etre un sujet concret et utile pour les adultes. "
+        "Genere UNIQUEMENT les titres, chacun sur une nouvelle ligne, sans numerotation."
     )
 
     prompt = (
-        f"Generez {num_topics} titres uniques sur la psychologie et le developpement personnel en francais. "
-        "Exemples de themes: "
-        "- Gestion des emotions (colere, stress, anxiete, tristesse) "
-        "- Confidence en soi (estime de soi, courage, prise de decision) "
-        "- Relations interpersonnelles (communication, empathie, conflits) "
-        "- Habitudes et productivite (routine, discipline, procrastination) "
-        "- Bien-etre mental (meditation, pleine conscience, gratitude) "
-        "- Motivation et objectifs (perseverance, reussite, echec) "
+        f"Genere {num_topics} titres uniques sur la psychologie et le developpement personnel en francais. "
+        "Sujets demandes: "
+        "- Gestion des emotions (colere, stress, anxiete, tristesse, peur) "
+        "- Confiance en soi (estime de soi, courage, prise de decision) "
+        "- Relations humaines (communication, empathie, conflits, couples, famille) "
+        "- Habitudes et productivite (routine, discipline, procrastination, organisation) "
+        "- Bien-etre mental (meditation, pleine conscience, gratitude, sante mentale) "
+        "- Motivation et objectifs (perseverance, reussite, echec, ambitions) "
+        "- Psychologie cognitive (biais, prise de decision, pensee positive) "
+        "- Developpement personnel (lucidite, introspection, evolution personnelle) "
         "Chaque titre sur une nouvelle ligne, sans numeros."
     )
 
@@ -111,7 +114,7 @@ def get_fallback_topics():
         "Les secrets des gens heureux",
         "Comment sortir de sa zone de confort",
         "L'importance de l'entourage",
-        "Comment developper la créativité",
+        "Comment developper la creativite",
         "La psychologie du succes",
         "Les erreurs a eviter en communication",
         "Comment guerir ses blessures du passe",
@@ -131,7 +134,7 @@ def get_fallback_topics():
         "Les techniques de relaxation",
         "Comment gerer les conflits",
         "La philosophie stoicienne pour la vie moderne",
-        "Les clés de la motivation durable",
+        "Les cles de la motivation durable",
         "Comment developper l'intuition",
         "La psychologie du changement",
         "Les erreurs courantes en gestion du stress",
@@ -151,7 +154,7 @@ def get_fallback_topics():
         "Comment surmonter les difficultes",
         "L'art de la simplicite volontaire",
         "La psychologie des relations",
-        "Les clés de la communication efficace",
+        "Les cles de la communication efficace",
         "Comment gerer le changement",
         "La sagesse des stoiciens",
         "Les bases de la pleine conscience",
