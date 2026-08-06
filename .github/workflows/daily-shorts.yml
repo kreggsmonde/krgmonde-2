@@ -2,19 +2,21 @@ name: Daily Auto Shorts with YouTube Upload
 
 on:
   schedule:
-    # 5x/day: 0, 5, 10, 15, 20 UTC = 5:30 AM, 10:30 AM, 3:30 PM, 8:30 PM, 1:30 AM IST
-    - cron: "0 0,5,10,15,20 * * *"
+    - cron: "0 16 * * *"
   workflow_dispatch:
 
 jobs:
   generate-and-upload:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Required to push topic updates
-    
+      contents: write
+
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        persist-credentials: true
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -30,7 +32,6 @@ jobs:
     - name: Cache Vosk Model
       uses: actions/cache@v4
       with:
-        # Matches the French model you are using in main.py
         path: vosk-model-small-fr-0.22
         key: vosk-fr-model-${{ runner.os }}
 
@@ -39,7 +40,6 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
         pip install certifi
-        # Fixes SSL verification for urllib by using certifi's bundle
         echo "SSL_CERT_FILE=$(python -m certifi)" >> $GITHUB_ENV
 
     - name: Check and generate topics if needed
@@ -52,53 +52,11 @@ jobs:
     - name: Generate daily short video
       env:
         POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
-        # Ultimate fallback: tells Python to bypass expired SSL certs
+        GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+        GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
         PYTHONHTTPSVERIFY: "0"
       run: |
         python main.py
-
-    - name: Verify and commit updated topics
-      run: |
-        echo "📊 Checking topic file changes..."
-        
-        # Show current state of topic files
-        echo "=== used_topics.txt content ==="
-        cat used_topics.txt || echo "File not found or empty"
-        
-        echo ""
-        echo "=== topics.txt (first 5 lines) ==="
-        head -n 5 topics.txt || echo "File not found or empty"
-        
-        echo ""
-        echo "=== Git status ==="
-        git status
-        
-        # Configure git
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        
-        # Add the files
-        git add topics.txt used_topics.txt
-        
-        # Check if there are changes to commit
-        if git diff --staged --quiet; then
-          echo "⚠️ No changes to commit - topic files were not modified!"
-          echo "This might indicate an issue with topic rotation."
-          exit 1
-        else
-          echo "✅ Changes detected, committing..."
-          git commit -m "Update topics after daily video generation [skip ci]"
-          
-          echo "📤 Pushing to repository..."
-          git push
-          
-          if [ $? -eq 0 ]; then
-            echo "✅ Successfully pushed topic updates to repository"
-          else
-            echo "❌ Failed to push changes"
-            exit 1
-          fi
-        fi
 
     - name: Upload to all platforms
       env:
@@ -129,20 +87,43 @@ jobs:
         # Telegram (optional)
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-        # Added SSL fallback for uploads too
         PYTHONHTTPSVERIFY: "0"
       run: |
-        echo "🔍 Checking which credentials are loaded..."
-        echo "YouTube: $([ -n "$YT_CLIENT_ID" ] && echo "✅ SET" || echo "❌ NOT SET")"
-        echo "Facebook: $([ -n "$FACEBOOK_ACCESS_TOKEN" ] && echo "✅ SET" || echo "❌ NOT SET")"
-        echo "Instagram: $([ -n "$INSTAGRAM_ACCESS_TOKEN" ] && echo "✅ SET" || echo "❌ NOT SET")"
-        echo "VK: $([ -n "$VK_ACCESS_TOKEN" ] && echo "✅ SET" || echo "❌ NOT SET")"
-        echo "Threads: $([ -n "$THREADS_ACCESS_TOKEN" ] && echo "✅ SET" || echo "❌ NOT SET")"
-        echo "Twitter: $([ -n "$TWITTER_API_KEY" ] && echo "✅ SET" || echo "❌ NOT SET")"
-        echo "Telegram: $([ -n "$TELEGRAM_BOT_TOKEN" ] && echo "✅ SET" || echo "❌ NOT SET")"
+        echo "Checking which credentials are loaded..."
+        echo "YouTube: $([ -n "$YT_CLIENT_ID" ] && echo "SET" || echo "NOT SET")"
+        echo "Facebook: $([ -n "$FACEBOOK_ACCESS_TOKEN" ] && echo "SET" || echo "NOT SET")"
+        echo "Instagram: $([ -n "$INSTAGRAM_ACCESS_TOKEN" ] && echo "SET" || echo "NOT SET")"
+        echo "VK: $([ -n "$VK_ACCESS_TOKEN" ] && echo "SET" || echo "NOT SET")"
+        echo "Threads: $([ -n "$THREADS_ACCESS_TOKEN" ] && echo "SET" || echo "NOT SET")"
+        echo "Twitter: $([ -n "$TWITTER_API_KEY" ] && echo "SET" || echo "NOT SET")"
+        echo "Telegram: $([ -n "$TELEGRAM_BOT_TOKEN" ] && echo "SET" || echo "NOT SET")"
         echo ""
-        echo "📤 Starting upload to all platforms..."
+        echo "Starting upload to all platforms..."
         python upload_all_platforms.py
+
+    - name: Verify and commit updated topics
+      run: |
+        echo "Checking topic file changes..."
+        cat used_topics.txt || echo "File not found or empty"
+        echo ""
+        echo "=== topics.txt (first 5 lines) ==="
+        head -n 5 topics.txt || echo "File not found or empty"
+        echo ""
+        git status
+
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+
+        git add topics.txt used_topics.txt used_images.json
+
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+          exit 1
+        else
+          echo "Changes detected, committing..."
+          git commit -m "Update topics after daily video generation [skip ci]"
+          git push
+        fi
 
     - name: Upload video artifact (backup)
       uses: actions/upload-artifact@v4
