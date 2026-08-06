@@ -69,32 +69,99 @@ def ensure_dirs():
             except Exception:
                 pass
 
+def get_all_used_topics():
+    """Get all previously used topics to prevent duplicates."""
+    used = set()
+    if os.path.exists("used_topics.txt"):
+        with open("used_topics.txt", "r", encoding="utf-8") as f:
+            for line in f:
+                if ": " in line:
+                    topic = line.split(": ", 1)[1].strip()
+                    used.add(topic.lower())
+                else:
+                    used.add(line.strip().lower())
+    return used
+
 def choose_topic_for_today():
+    """Select and consume a topic. Auto-generates new unique topics when running low."""
     if not os.path.exists(TOPICS_FILE):
-        print(f"[topics] {TOPICS_FILE} not found!")
-        return "La puissance de la gratitude au quotidien"
-
-    with open(TOPICS_FILE, "r", encoding="utf-8") as f:
-        topics = [line.strip() for line in f if line.strip()]
-    if not topics:
-        print("[topics] No topics found! Using fallback.")
-        return "Les petites habitudes qui changent tout"
-
-    selected_topic = topics[0]
-    print(f"[topics] Topic selected: {selected_topic}")
-    print(f"[topics] Remaining in topics.txt: {len(topics) - 1}")
+        print(f"[topics] {TOPICS_FILE} not found! Generating initial topics...")
+        from generate_topics import generate_french_psychology_topics, save_topics_to_file
+        new_topics = generate_french_psychology_topics(100)
+        save_topics_to_file(new_topics)
 
     try:
-        with open("used_topics.txt", "a", encoding="utf-8") as f:
-            f.write(f"{selected_topic}\n")
+        with open(TOPICS_FILE, "r", encoding="utf-8") as f:
+            topics = [line.strip() for line in f if line.strip()]
+        print(f"[topics] Loaded {len(topics)} topics")
     except Exception as e:
-        print(f"[topics] Warning writing used_topics.txt: {e}")
+        print(f"[topics] ERROR reading {TOPICS_FILE}: {e}")
+        return "La puissance de la gratitude au quotidien"
+
+    if len(topics) < 30:
+        print(f"[topics] Only {len(topics)} topics left. Generating 100 new unique topics...")
+        from generate_topics import generate_french_psychology_topics
+
+        used_topics = get_all_used_topics()
+        existing_topics_lower = set(t.lower() for t in topics)
+        all_existing = used_topics.union(existing_topics_lower)
+
+        print(f"[topics] Already used/existing: {len(all_existing)} topics")
+        attempts = 0
+        new_unique_topics = []
+        while len(new_unique_topics) < 100 and attempts < 5:
+            batch = generate_french_psychology_topics(150)
+            for topic in batch:
+                if topic.lower() not in all_existing:
+                    new_unique_topics.append(topic)
+                    all_existing.add(topic.lower())
+                    if len(new_unique_topics) >= 100:
+                        break
+            attempts += 1
+
+        print(f"[topics] Generated {len(new_unique_topics)} unique new topics (0 duplicates)")
+        topics.extend(new_unique_topics)
+        try:
+            with open(TOPICS_FILE, "w", encoding="utf-8") as f:
+                f.write("\n".join(topics) + "\n")
+                f.flush()
+                os.fsync(f.fileno())
+            print(f"[topics] Now {len(topics)} topics available")
+        except Exception as e:
+            print(f"[topics] ERROR saving new topics: {e}")
+
+    if not topics:
+        print("[topics] No topics available! Using fallback.")
+        return "La puissance de la gratitude au quotidien"
+
+    selected_topic = topics[0]
+    remaining_topics = topics[1:]
+
+    print(f"[topics] Topic selected: {selected_topic}")
+    print(f"[topics] Remaining: {len(remaining_topics)}")
 
     try:
         with open(TOPICS_FILE, "w", encoding="utf-8") as f:
-            f.write("\n".join(topics[1:]) + "\n")
+            f.write("\n".join(remaining_topics) + "\n")
+            f.flush()
+            os.fsync(f.fileno())
+        with open(TOPICS_FILE, "r", encoding="utf-8") as f:
+            verification = [line.strip() for line in f if line.strip()]
+        if selected_topic in verification:
+            print(f"[topics] WARNING: Topic still in file after removal!")
+        else:
+            print(f"[topics] Topic successfully removed from topics.txt")
     except Exception as e:
-        print(f"[topics] Warning updating topics.txt: {e}")
+        print(f"[topics] ERROR updating {TOPICS_FILE}: {e}")
+
+    try:
+        today = datetime.datetime.now()
+        with open("used_topics.txt", "a", encoding="utf-8") as f:
+            f.write(f"{today.strftime('%Y-%m-%d')}: {selected_topic}\n")
+            f.flush()
+        print(f"[topics] Topic logged to used_topics.txt")
+    except Exception as e:
+        print(f"[topics] WARNING: Could not log topic: {e}")
 
     return selected_topic
 
