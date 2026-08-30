@@ -425,3 +425,4 @@ Comment gerer le stress efficacement
 2026-08-28: Comment vaincre la peur de l'echec
 2026-08-29: L'art de la patience
 2026-08-29: Les bienfaits de l'ecriture expressive
+2026-08-30: Comment developper la resilience
