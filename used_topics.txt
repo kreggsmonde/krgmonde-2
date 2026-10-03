@@ -459,3 +459,4 @@ Comment gerer le stress efficacement
 2026-09-30: Comment developper l'intuition
 2026-10-01: La psychologie du changement
 2026-10-02: Les erreurs courantes en gestion du stress
+2026-10-03: Comment creer un environnement positif
