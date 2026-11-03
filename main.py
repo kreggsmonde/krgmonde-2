@@ -184,7 +184,7 @@ def generate_psychology_content(topic: str) -> str:
         "Content-Type": "application/json"
     }
     payload = {
-        "model": "openai",
+        "model": "openai/gpt-5.4-nano",
         "messages": [
             {"role": "system", "content": "You are a psychology and self-improvement expert writing in French. Write direct advice, not stories."},
             {"role": "user", "content": full_prompt}
@@ -255,7 +255,7 @@ def generate_visual_prompts(content: str) -> list:
         "Content-Type": "application/json"
     }
     payload = {
-        "model": "openai",
+        "model": "openai/gpt-5.4-nano",
         "messages": [
             {"role": "system", "content": "You are a creative director for animation. Show relatable human situations, not animals."},
             {"role": "user", "content": prompt}

@@ -40,7 +40,7 @@ def generate_podcast_story(topic: str):
     )
     
     payload = {
-        "model": "openai",
+        "model": "openai/gpt-5.4-nano",
         "messages": [
             {"role": "system", "content": "You are a psychology and self-improvement expert creating podcast content in French."},
             {"role": "user", "content": prompt}
